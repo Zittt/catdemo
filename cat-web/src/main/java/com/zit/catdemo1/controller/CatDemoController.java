@@ -1,0 +1,33 @@
+package com.zit.catdemo1.controller;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Controller;
+
+import com.dianping.cat.Cat;
+import com.dianping.cat.message.Event;
+import com.dianping.cat.message.Transaction;
+
+@Controller
+public class CatDemoController {
+
+	private static final Logger _LOG = LoggerFactory.getLogger(CatDemoController.class);
+	
+	public void func1() {
+		Transaction t = Cat.newTransaction("URL", "name...");	// 创建一个 Transaction
+		try {
+			Cat.logEvent("URL.Server", "namehere", Event.SUCCESS, "第四个参数");
+			Cat.logMetricForCount("payCount");
+			Cat.logMetricForSum("PayAmount", 100);
+			
+			// yourbusiness
+			_LOG.info("打出了日志，自己的业务逻辑");
+			throw new RuntimeException("手动抛了一个异常！");
+		} catch (Exception e) {
+			t.setStatus(e);
+		} finally {
+			t.complete();
+		}
+		
+	}
+}
