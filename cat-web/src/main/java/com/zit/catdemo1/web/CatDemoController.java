@@ -1,8 +1,13 @@
-package com.zit.catdemo1.controller;
+package com.zit.catdemo1.web;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.dianping.cat.Cat;
 import com.dianping.cat.message.Event;
@@ -13,7 +18,9 @@ public class CatDemoController {
 
 	private static final Logger _LOG = LoggerFactory.getLogger(CatDemoController.class);
 	
-	public void func1() {
+	@ResponseBody
+	@RequestMapping(value = "test/demo")
+	public Object func1(HttpServletRequest request, HttpServletResponse response) {
 		Transaction t = Cat.newTransaction("URL", "name...");	// 创建一个 Transaction
 		try {
 			Cat.logEvent("URL.Server", "namehere", Event.SUCCESS, "第四个参数");
@@ -28,6 +35,6 @@ public class CatDemoController {
 		} finally {
 			t.complete();
 		}
-		
+		return "hahah";
 	}
 }
