@@ -117,6 +117,6 @@
 		</mvc:message-converters>
 	</mvc:annotation-driven>
 	
-	<!-- <import resource="classpath*:spring-*.xml"/> -->
+	<import resource="classpath*:spring-*.xml"/>
 	
 </beans>
