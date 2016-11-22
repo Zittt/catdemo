@@ -6,4 +6,12 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   <artifactId>cat-dao</artifactId>
+  
+  <dependencies>
+	<dependency>
+   		<groupId>com.zit.catdemo</groupId>
+   		<artifactId>cat-util</artifactId>
+   		<version>0.0.1-SNAPSHOT</version>
+	</dependency>
+  </dependencies>
 </project>

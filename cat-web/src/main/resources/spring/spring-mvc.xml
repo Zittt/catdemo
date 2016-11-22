@@ -26,10 +26,10 @@
 	</context:component-scan>
 	
 	<!-- spring静态资源的访问 -->
-	<mvc:resources location="/statics/" mapping="/statics/**"></mvc:resources>
+	<!-- <mvc:resources location="/statics/" mapping="/statics/**"></mvc:resources>
 	<mvc:resources location="/js/" mapping="/js/**"></mvc:resources>
 	<mvc:resources location="/css/" mapping="/css/**"></mvc:resources>
-	<mvc:resources location="/images/" mapping="/images/**"></mvc:resources>
+	<mvc:resources location="/images/" mapping="/images/**"></mvc:resources> -->
 	<!-- 对静态资源文件的访问，交给default servlet handler处理 -->
 	<mvc:default-servlet-handler/>
 	

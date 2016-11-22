@@ -6,4 +6,17 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   <artifactId>cat-service</artifactId>
+  
+  <dependencies>
+	<dependency>
+   		<groupId>com.zit.catdemo</groupId>
+   		<artifactId>cat-dao</artifactId>
+   		<version>0.0.1-SNAPSHOT</version>
+	</dependency>
+	<dependency>
+   		<groupId>com.zit.catdemo</groupId>
+   		<artifactId>cat-util</artifactId>
+   		<version>0.0.1-SNAPSHOT</version>
+	</dependency>
+  </dependencies>
 </project>

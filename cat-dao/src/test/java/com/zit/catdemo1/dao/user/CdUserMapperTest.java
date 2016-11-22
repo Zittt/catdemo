@@ -34,12 +34,12 @@ public class CdUserMapperTest extends BaseDaoTest{
 	@Test
 	public void testQuery() {
 		long start = System.currentTimeMillis();
-		System.out.println("start:" + start);
+		_LOG.info("### start={}", start);
 		CdUser user = cdUserMapper.selectByPrimaryKey("456");
 		long end = System.currentTimeMillis();
-		long cost = (end - start) / 1000;
-		System.out.println("cost=" + cost);
-		System.out.println("result=" + JSONObject.toJSONString(user));
+		_LOG.info("### end={}", end);
+		long cost = (end - start);
+		_LOG.info("### costtime={}", cost);
 		_LOG.info("### resul={}", JSONObject.toJSONString(user));
 	}
 	
