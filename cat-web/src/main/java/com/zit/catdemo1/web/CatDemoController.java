@@ -26,6 +26,15 @@ public class CatDemoController {
 		return "wowowowow";
 	}
 	
+	
+	
+	@ResponseBody
+	@RequestMapping(value = "test/demo3", method=RequestMethod.POST)
+	public Object func3(HttpServletRequest request, HttpServletResponse response) {
+		
+		return "func3 success return.";
+	}
+	
 	@ResponseBody
 	@RequestMapping(value = "test/demo", method=RequestMethod.POST)
 	public Object func1(HttpServletRequest request, HttpServletResponse response) {
@@ -41,9 +50,10 @@ public class CatDemoController {
 		} catch (Exception e) {
 			t.setStatus(e);
 			_LOG.error("异常捕获了。。。");
+			throw e;
 		} finally {
 			t.complete();
 		}
-		return "hahah";
+//		return "hahah";
 	}
 }

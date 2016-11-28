@@ -10,6 +10,6 @@ public class DemoControllerTest extends BaseUnitTest {
 	
 	@Test
 	public void func1() {
-		_LOG.info("#######  hahhahhahh");
+		_LOG.info("#######  hahhahhahh222");
 	}
 }
